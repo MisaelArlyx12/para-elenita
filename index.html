@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para ti 💗</title>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
+      text-align: center;
+      overflow-y: auto;
+    }
+
+    /* SECCIONES */
+    .seccion {
+      min-height: 100vh;
+      display: none;
+      padding: 40px;
+    }
+
+    .activa {
+      display: block;
+    }
+
+    /* BOTONES */
+    button {
+      padding: 15px 25px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    #si, #no {
+      position: absolute;
+    }
+
+    #si {
+      background: #ffcc00;
+      left: 40%;
+      top: 60%;
+    }
+
+    #no {
+      background: #ff6666;
+      left: 55%;
+      top: 60%;
+    }
+
+    /* CORAZONES + SNOOPY */
+    .corazon {
+      position: absolute;
+      animation: subir 4s linear;
+      width: 40px;
+    }
+
+    @keyframes subir {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-800px); opacity: 0; }
+    }
+
+    /* CARTA Y POEMA */
+    .carta, .poema {
+      margin: 40px auto;
+      width: 60%;
+      background: #fffaf0;
+      padding: 40px;
+      border-radius: 15px;
+      font-family: 'Brush Script MT', cursive;
+      font-size: 22px;
+    }
+
+    /* SNOOPY */
+    .sticker {
+      position: absolute;
+      width: 100px;
+    }
+
+    /* PLAYER */
+    .contenedor {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    /* COVER */
+    .cover {
+      width: 220px;
+      border-radius: 10px;
+    }
+
+    /* BARRA */
+    .barra {
+      width: 250px;
+      height: 8px;
+      background: #ddd;
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .progreso {
+      height: 100%;
+      width: 0%;
+      background: #ffcc00;
+      position: relative;
+    }
+
+    .progreso::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(50%, -50%);
+      width: 12px;
+      height: 12px;
+      background: #ffcc00;
+      border-radius: 50%;
+    }
+
+    /* BOTON PLAY */
+    .play-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #ffcc00;
+      font-size: 25px;
+      margin-top: 15px;
+    }
+
+    /* LETRA */
+    .letra {
+      width: 300px;
+      height: 300px;
+      overflow-y: auto;
+      text-align: left;
+    }
+
+    .letra p {
+      opacity: 0.2;
+      transition: 0.3s;
+    }
+
+    .letra .activa {
+      opacity: 1;
+      font-weight: bold;
+    }
+
+    .letra .pasada {
+      opacity: 0;
+    }
+
+    /* TEXTO ESQUINA */
+    .extra-text {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 200px;
+      font-size: 14px;
+      background: #fff8dc;
+      padding: 10px;
+      border-radius: 10px;
+      text-align: left;
+    }
+
+    .back-btn{
+      position:absolute;
+      bottom:20px;
+      left:20px;
+      font-size:18px;
+      background:#ffcc00;
+      border-radius:50%;
+      width:50px;
+      height:50px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .imagen-inicio{
+      display:block;
+      margin:20px auto;
+      width:250px;
+      border-radius:15px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="inicio" class="seccion activa">
+    <h1>¿Quieres intentarlo una última vez? 🥺💗</h1>
+    <img src="snoopy.png" class="imagen-inicio">
+    <button id="si" onclick="aceptar()">Sí 💗</button>
+    <button id="no" onclick="rechazar()">No 💔</button>
+  </div>
+
+  <div id="carta" class="seccion">
+    <h1>Carta 💌</h1>
+    <button class="back-btn" onclick="irA('inicio')">⬅</button>
+
+    <img src="snoopy.png" class="sticker" style="top:10%; left:5%;" alt="Snoopy">
+    <img src="SnoopyLove.png" class="sticker" style="bottom:10%; right:5%;" alt="Snoopy Love">
+
+    <div class="carta">
+      Querida Elenita,<br>
+      No escribo esto para recibir un perdón... Ni para aparentar que nada de esto sucedió, me duele hasta el alma lo que pasó, y sé que a ti también, pero no puedo cambiar el pasado, solo puedo aprender de él, y espero que tú también puedas hacerlo. <br>
+      Quiero estar contigo, no paro de pensar en ti siempre, haría esto más largo pero en serio la desesperación y la ansiedad no me dejan pensar con claridad, no sé si estoy cometiendo otra estupidez al escribir esto, no lo sé, no sé ni cuándo te lo enviaré, pero solo quiero que sepas todo esto importante. <br>
+      Quiero seguir contigo, aprender juntos, aún somos muy jóvenes y quiero que mi vida seas tú, por favor Elena, quiero que no pienses nada malo de mí... 
+      Te amo con todo mi corazón, y no quiero perderte, no quiero que te vayas, no quiero que sufras, no quiero que llores, solo quiero verte feliz, y si eso es conmigo, entonces aquí estaré, para amarte, cuidarte, protegerte, y hacerte feliz cada día de mi vida<br>
+      Te amo mi Elenita bella, y siempre lo haré, no importa lo que pase,
+    </div>
+
+    <button onclick="irA('musica')">🎵</button>
+  </div>
+
+  <div id="musica" class="seccion">
+    <h1>Jósean Log - Beso 🎧</h1>
+    <button class="back-btn" onclick="irA('carta')">⬅</button>
+
+    <div class="contenedor">
+      <div>
+        <img src="Josean log.jpg" class="cover" alt="Cover">
+
+        <div onclick="cambiarTiempo(event)" class="barra">
+          <div id="progreso" class="progreso"></div>
+        </div>
+
+        <p><span id="actual">0:00</span> / <span id="total">0:00</span></p>
+
+        <button onclick="toggle()" id="playBtn" class="play-btn">▶</button>
+
+        <audio id="audio" src="Jósean Log - Beso.mp3"></audio>
+      </div>
+
+      <div class="letra">
+        <p data-time="0">🎵</p>
+        <p data-time="21">Beso, Tan simple como, eso Tan simple como un beso, Todo puede cambiar</p>
+        <p data-time="37">Beso, Tan simple como eso, Tan simple como un beso, Todo puede arreglar</p>
+        <p data-time="52">Bésame, Junta tus labios con los míos otra vez, Que quiero amarte y decirte lo que sé Pero no encuentro las palabras, bésame</p>
+        <p data-time="76">Bésame, Junta tus labios con los míos otra vez Que para enamorarte, como lo hice ayer Hay que empezar por acercarse, bésame</p>
+        <p data-time="98">🎵</p>
+        <p data-time="110">Beso, Fragmento de universo, Ritual frente a lo adverso, Capricho natural</p>
+        <p data-time="126">Beso, Lenguaje tan diverso, Camino sin regreso Elixir inmortal</p>
+        <p data-time="142">Bésame, Junta tus labios con los míos otra vez, Que quiero amarte y decirte lo que sé Pero no encuentro las palabras, bésame</p>
+        <p data-time="165">Bésame, Junta tus labios con los míos otra vez, Que para enamorarte, como lo hice ayer Hay que empezar por acercarse, bésame</p>
+        <p data-time="188">🎵</p>
+        <p data-time="197">Bésame</p> 
+        <p data-time="200">🎵</p>
+      </div>
+    </div>
+
+    <div class="extra-text">
+      Esta canción me recuerda a nosotros, a lo que tuvimos y a lo que podríamos tener de nuevo. Cada vez que la escucho, no puedo evitar pensar en ti y en lo mucho que significas para mí. Espero que al escucharla, puedas sentir todo el amor y cariño que tengo por ti.
+    </div>
+
+    <button onclick="irA('poema')" style="margin-top: 30px;">Poema?</button>
+  </div>
+
+  <div id="poema" class="seccion">
+    <h1>Para ti mi Elenita bella</h1>
+    <button class="back-btn" onclick="irA('musica')">⬅</button>
+
+    <div class="poema">
+      No te prometo días perfectos, no soy perfecto, quisiera serlo por ti, pero no puedo, pero lo que sí te prometo es estar ahí para ti, cada minuto, cada hora, cada día, cada semana, cada mes, cada año, hasta que mi corazón deje de latir<br>
+      Todo será mejor, seré mejor para ti, por ti, y contigo, porque te amo con todo mi ser, y no quiero perderte, no quiero que te vayas, no quiero que sufras, no quiero que llores, solo quiero verte feliz, y si eso es conmigo, entonces aquí estaré, para amarte, cuidarte, protegerte, y hacerte feliz cada día de mi vida<br>
+      Te amo mi Elenita bella, y siempre lo haré, no importa lo que pase, no importa lo que digan, no importa lo que hagan, yo siempre te amaré, y siempre estaré aquí para ti, porque tú eres mi todo, mi vida, mi amor, mi felicidad, y sin ti, no soy nada<br>
+      Si es que seas feliz, implica que no sea conmigo, ahora sí simplemente lo aceptaré, porque lo que más quiero es tu felicidad, aunque no sea conmigo, aunque no sea a mi lado, aunque no sea en mis brazos, aunque no sea con mi amor, aunque no sea con mi cariño, aunque no sea con mi cuidado, aunque no sea con mi protección, aunque no sea con mi todo<br>
+      Te amo mi amor, te amo con todo mi corazón...
+    </div>
+  </div>
+
+  <script>
+    /* CAMBIO SECCION */
+    function irA(id) {
+      document.querySelectorAll('.seccion').forEach(s => s.classList.remove('activa'));
+      document.getElementById(id).classList.add('activa');
+      window.scrollTo(0, 0);
+    }
+
+    /* BOTON NO */
+    let c = 0;
+    let frases = ["¿segura?", "piénsalo", "última 😢", "no 😭"];
+
+    function rechazar() {
+      c++;
+      let no = document.getElementById("no");
+      let si = document.getElementById("si");
+
+      no.style.fontSize = (18 - c * 2) + "px";
+      si.style.fontSize = (18 + c * 4) + "px";
+
+      if (c < frases.length) {
+        no.innerText = frases[c];
+      }
+      
+      if (c >= 6) {
+        no.style.display = "none";
+      }
+    }
+
+    /* ACEPTAR */
+    function aceptar() {
+      for (let i = 0; i < 25; i++) {
+        let img = document.createElement("img");
+        img.src = "snoppyto.jpg"; /* cambia por tu imagen */
+        img.className = "corazon";
+        img.style.left = Math.random() * 100 + "%";
+        img.style.top = "90%";
+        document.body.appendChild(img);
+        
+        setTimeout(() => img.remove(), 4000);
+      }
+      setTimeout(() => irA('carta'), 1200);
+    }
+
+    /* MUSICA */
+    let audio = document.getElementById("audio");
+    let progreso = document.getElementById("progreso");
+    let playBtn = document.getElementById("playBtn");
+    let actual = document.getElementById("actual");
+    let total = document.getElementById("total");
+    let lineas = document.querySelectorAll(".letra p");
+
+    function toggle() {
+      if (audio.paused) {
+        audio.play();
+        playBtn.innerText = "⏸";
+      } else {
+        audio.pause();
+        playBtn.innerText = "▶";
+      }
+    }
+
+    function cambiarTiempo(e) {
+      let rect = e.currentTarget.getBoundingClientRect();
+      let clickX = e.clientX - rect.left;
+      let width = rect.width;
+      audio.currentTime = (clickX / width) * audio.duration;
+    }
+
+    audio.addEventListener("loadedmetadata", () => {
+      let min = Math.floor(audio.duration / 60);
+      let sec = Math.floor(audio.duration % 60);
+      total.innerText = min + ":" + (sec < 10 ? "0" : "") + sec;
+    });
+
+    audio.addEventListener("timeupdate", () => {
+      progreso.style.width = (audio.currentTime / audio.duration) * 100 + "%";
+      
+      let min = Math.floor(audio.currentTime / 60);
+      let sec = Math.floor(audio.currentTime % 60);
+      actual.innerText = min + ":" + (sec < 10 ? "0" : "") + sec;
+
+      lineas.forEach((linea, index) => {
+        let tiempo = parseFloat(linea.getAttribute("data-time"));
+        if (audio.currentTime >= tiempo) {
+          lineas.forEach(p => p.classList.remove("activa"));
+          linea.classList.add("activa");
+          
+          for (let i = 0; i < index; i++) {
+            lineas[i].classList.add("pasada");
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
